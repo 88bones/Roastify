@@ -1,0 +1,12 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap'); */
+
+:root{
+    --green:     #1ED760;
+    --white:     #FFFFFF;
+    --black:     #121212;
+}
+body{
+ font-family:Arial, Helvetica, sans-serif;
+ background-color: var(--black);
+ color: var(--white);
+}
