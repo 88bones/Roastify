@@ -2,9 +2,13 @@ import React from "react";
 import BurgerMenu from "./BurgerMenu";
 
 const Banner = ({ isOver }) => {
+  const handleLogin = () => {
+    window.location.href = "http://127.0.0.1:3001/login";
+  };
+
   return (
     <div className="flex justify-center h-100">
-      <div className="absolute z-10 right-0">
+      <div className="absolute z-10 right-0 top-20">
         {isOver == true ? (
           <div>
             <BurgerMenu />
@@ -21,7 +25,10 @@ const Banner = ({ isOver }) => {
             <span className="font-bold text-green-500">Spotify</span> listening
             history.
           </p>
-          <button className="bg-green-600 px-16 py-4 rounded-2xl text-2xl cursor-pointer">
+          <button
+            className="bg-green-600 px-16 py-4 rounded-2xl text-2xl cursor-pointer"
+            onClick={handleLogin}
+          >
             Login with Spotify
           </button>
         </div>

@@ -2,6 +2,7 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import { useState } from "react";
+import Dashboard from "./pages/DashBoard";
 
 function App() {
   const [isOver, setIsOver] = useState(false);
@@ -12,7 +13,9 @@ function App() {
         <Route
           path="/"
           element={<Home isOver={isOver} setIsOver={setIsOver} />}
-        ></Route>
+        />
+
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

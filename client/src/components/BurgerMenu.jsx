@@ -14,7 +14,7 @@ const BurgerMenu = () => {
           <li
             key={index}
             onClick={() => navigate(item.path)}
-            className="hover:bg-green-600 px-2 py-1 rounded text-white transition-colors"
+            className="text-white "
           >
             {item.name}
           </li>
