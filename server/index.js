@@ -10,8 +10,9 @@ app.use(express.json());
 
 const client_id = process.env.SPOTIFY_CLIENT_ID;
 const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const redirect_uri = process.env.SPOTIFY_REDIRECT_URI; // http://127.0.0.1:3001/callback
-const frontend_uri = process.env.FRONTEND_URI; // http://localhost:5173
+const redirect_uri = process.env.SPOTIFY_REDIRECT_URI;
+
+const frontend_uri = process.env.FRONTEND_URI;
 
 function generateRandomString(length) {
   let text = "";
@@ -26,7 +27,7 @@ function generateRandomString(length) {
 // Step 1: Login route
 app.get("/login", (req, res) => {
   const state = generateRandomString(16);
-  const scope = "user-read-private user-read-email";
+  const scope = "user-read-private user-read-email user-top-read";
 
   const authUrl =
     "https://accounts.spotify.com/authorize?" +
