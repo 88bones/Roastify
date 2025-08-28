@@ -5,6 +5,9 @@ import { useState } from "react";
 import Dashboard from "./pages/DashBoard";
 
 function App() {
+  const params = new URLSearchParams(window.location.search);
+  const accessToken = params.get("access_token");
+
   const [isOver, setIsOver] = useState(false);
 
   return (
@@ -15,7 +18,10 @@ function App() {
           element={<Home isOver={isOver} setIsOver={setIsOver} />}
         />
 
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard accessToken={accessToken} />}
+        />
       </Routes>
     </Router>
   );
