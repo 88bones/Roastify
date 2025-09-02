@@ -3,7 +3,7 @@ import BurgerMenu from "./BurgerMenu";
 
 const Banner = ({ isOver }) => {
   const handleLogin = () => {
-    window.location.href = "http://127.0.0.1:3001/login";
+    window.location.href = "http://127.0.0.1:3001/api/login";
   };
 
   return (

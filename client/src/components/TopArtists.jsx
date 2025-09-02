@@ -15,16 +15,17 @@ const TopArtists = ({ accessToken }) => {
       )
       .then((res) => setTopArtists(res.data.items))
       .catch((err) => console.error(err));
-  }, []);
+  }, [accessToken]);
 
   return (
     <>
       {topArtists.length > 0 && (
         <div className="mt-6 flex flex-col justify-center items-center">
           <h2 className="text-xl font-semibold">Top Artists</h2>
-          <ol className="mt-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 list-decimal list-inside">
+
+          <ol className="mt-2 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 list-decimal list-inside">
             {topArtists.map((artist) => (
-              <li key={artist.id} className="flex items-center mt-2 px-2 ">
+              <li key={artist.id} className="flex items-center mt-2 mb-2 px-4 ">
                 <img
                   src={artist.images?.[0]?.url}
                   alt={artist.name}
