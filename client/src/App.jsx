@@ -23,6 +23,8 @@ function App() {
           path="/dashboard"
           element={
             <Dashboard
+              isOver={isOver}
+              setIsOver={setIsOver}
               accessToken={accessToken}
               topArtists={topArtists}
               setTopArtists={setTopArtists}

@@ -13,7 +13,7 @@ const NavBar = ({ setIsOver, isOver }) => {
   const navigate = useNavigate();
 
   return (
-    <nav className="py-10 px-4">
+    <nav className="py-6 px-4">
       <header className="flex items-center justify-between max-w-6xl mx-auto">
         <h1 className="text-green-600 font-extrabold text-3xl">Roastify</h1>
         <button

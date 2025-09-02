@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
+import BurgerMenu from "./BurgerMenu";
 
-const Profile = ({ accessToken }) => {
+const Profile = ({ accessToken, isOver }) => {
   const [profile, setProfile] = useState(null);
   useEffect(() => {
     if (!accessToken) return;
@@ -16,7 +17,15 @@ const Profile = ({ accessToken }) => {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      {/* <h1 className="text-2xl font-bold">Spotify Dashboard</h1> */}
+      <div className="absolute z-10 right-0 top-20">
+        {isOver == true ? (
+          <div>
+            <BurgerMenu />
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
 
       {profile ? (
         <div className="mt-4 ">

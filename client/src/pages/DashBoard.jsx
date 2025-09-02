@@ -5,11 +5,17 @@ import Profile from "../components/Profile";
 import TopArtists from "../components/TopArtists";
 import Roaster from "../components/Roaster";
 
-const Dashboard = ({ accessToken, topArtists, setTopArtists }) => {
+const Dashboard = ({
+  accessToken,
+  topArtists,
+  setTopArtists,
+  isOver,
+  setIsOver,
+}) => {
   return (
     <>
-      <NavBar />
-      <Profile accessToken={accessToken} />
+      <NavBar isOver={isOver} setIsOver={setIsOver} />
+      <Profile accessToken={accessToken} isOver={isOver} />
       <TopArtists
         accessToken={accessToken}
         topArtists={topArtists}

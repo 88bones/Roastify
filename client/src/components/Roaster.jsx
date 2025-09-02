@@ -6,7 +6,16 @@ const Roaster = ({ topArtists }) => {
 
   useEffect(() => {
     if (topArtists?.length > 0) {
-      postTopArtist(topArtists)
+      const simplifiedArtist = topArtists.map((artist) => ({
+        name: artist.name,
+        genres: artist.genres,
+      }));
+
+      const artistSummary = simplifiedArtist
+        .map((a) => `${a.name}(${a.genres.join(", ")})`)
+        .join("; ");
+
+      postTopArtist(artistSummary)
         .then((data) => {
           setRoast(data.roast);
         })
@@ -15,9 +24,11 @@ const Roaster = ({ topArtists }) => {
   }, [topArtists]);
 
   return (
-    <div>
-      <h2>Your Roast:</h2>
-      <p style={{ whiteSpace: "pre-wrap" }}>{roast || "Generating roast..."}</p>
+    <div className="mt-6 mb-6 flex justify-center max-w-screen px-4">
+      <div className="justify-center items-center w-2xl">
+        <h2 className="text-green-600 text-2xl font-bold">Roast</h2>
+        <p>{roast || "Analysing taste..."}</p>
+      </div>
     </div>
   );
 };

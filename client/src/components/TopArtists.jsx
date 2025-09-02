@@ -18,10 +18,9 @@ const TopArtists = ({ accessToken, topArtists, setTopArtists }) => {
   return (
     <>
       {topArtists.length > 0 && (
-        <div className="mt-6 flex flex-col justify-center items-center">
-          <h2 className="text-xl font-semibold">Top Artists</h2>
-
-          <ol className="mt-2 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 list-decimal list-inside">
+        <div className="mt-2 flex flex-col justify-center items-center">
+          <h2 className="text-green-600 text-2xl font-bold">Top Artists</h2>
+          <ol className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 list-decimal list-inside">
             {topArtists.map((artist) => (
               <li key={artist.id} className="flex items-center mt-2 mb-2 px-4 ">
                 <img
