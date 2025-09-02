@@ -9,6 +9,7 @@ function App() {
   const accessToken = params.get("access_token");
 
   const [isOver, setIsOver] = useState(false);
+  const [topArtists, setTopArtists] = useState([]);
 
   return (
     <Router>
@@ -20,7 +21,13 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={<Dashboard accessToken={accessToken} />}
+          element={
+            <Dashboard
+              accessToken={accessToken}
+              topArtists={topArtists}
+              setTopArtists={setTopArtists}
+            />
+          }
         />
       </Routes>
     </Router>

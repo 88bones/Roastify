@@ -1,9 +1,7 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
 
-const TopArtists = ({ accessToken }) => {
-  const [topArtists, setTopArtists] = useState([]);
-
+const TopArtists = ({ accessToken, topArtists, setTopArtists }) => {
   useEffect(() => {
     if (!accessToken) return;
     axios

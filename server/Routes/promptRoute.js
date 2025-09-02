@@ -1,5 +1,5 @@
-import express from "express";
-import OpenAI from "openai";
+const express = require("express");
+const OpenAI = require("openai");
 require("dotenv").config();
 
 const router = express.Router();
@@ -14,7 +14,7 @@ router.post("/artist", async (req, res) => {
 
     const prompt = `User listens to a lot ${JSON.stringify(
       musicData
-    )} Summarize their taste and roast them like you're their brutally honest friend.`;
+    )} Summarize their taste and roast them like you're their brutally honest friend like brutally fatality set to max in 50 words.`;
 
     const response = await openai.responses.create({
       model: "gpt-4o-mini",
