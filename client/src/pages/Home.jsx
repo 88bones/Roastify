@@ -6,7 +6,6 @@ import BurgerMenu from "../components/BurgerMenu";
 const Home = ({ isOver, setIsOver }) => {
   return (
     <div>
-      <NavBar isOver={isOver} setIsOver={setIsOver} />
       <Banner isOver={isOver} />
     </div>
   );

@@ -26,7 +26,7 @@ const Roaster = ({ topArtists }) => {
   return (
     <div className="mt-6 mb-6 flex justify-center max-w-screen px-4">
       <div className="justify-center items-center w-2xl">
-        <h2 className="text-green-600 text-2xl font-bold">Roast</h2>
+        <h2 className="text-green-600 text-2xl font-bold text-center">Roast</h2>
         <p>{roast || "Analysing taste..."}</p>
       </div>
     </div>

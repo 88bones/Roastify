@@ -19,7 +19,7 @@ const Profile = ({ accessToken, isOver }) => {
     <div className="flex flex-col justify-center items-center">
       <div className="absolute z-10 right-0 top-20">
         {isOver == true ? (
-          <div>
+          <div className="md:hidden">
             <BurgerMenu />
           </div>
         ) : (

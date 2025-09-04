@@ -5,7 +5,7 @@ import burger from "../assets/images/burger.png";
 const NavBar = ({ setIsOver, isOver }) => {
   const MenuItems = [
     { name: "Home", path: "/" },
-    { name: "About", path: "" },
+    { name: "About", path: "/about" },
     { name: "Privacy Policy", path: "" },
     { name: "Contact", path: "" },
   ];

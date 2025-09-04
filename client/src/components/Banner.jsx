@@ -10,7 +10,7 @@ const Banner = ({ isOver }) => {
     <div className="flex justify-center h-100">
       <div className="absolute z-10 right-0 top-20">
         {isOver == true ? (
-          <div>
+          <div className="md:hidden">
             <BurgerMenu />
           </div>
         ) : (
