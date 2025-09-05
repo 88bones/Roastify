@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { postTopArtist } from "../services/getRoast";
+import { AppContext } from "../context/AppContext";
 
-const Roaster = ({ topArtists }) => {
+const Roaster = () => {
+  const { topArtists } = useContext(AppContext);
+
   const [roast, setRoast] = useState("");
 
   useEffect(() => {

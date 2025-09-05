@@ -1,7 +1,11 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
-const TopArtists = ({ accessToken, topArtists, setTopArtists }) => {
+const TopArtists = () => {
+  const { topArtists, setTopArtists, accessToken } = useContext(AppContext);
+
   useEffect(() => {
     if (!accessToken) return;
     axios

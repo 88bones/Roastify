@@ -1,8 +1,11 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useContext } from "react";
 import axios from "axios";
 import BurgerMenu from "./BurgerMenu";
+import { AppContext } from "../context/AppContext";
 
-const Profile = ({ accessToken, isOver }) => {
+const Profile = ({ isOver }) => {
+  const { accessToken } = useContext(AppContext);
+
   const [profile, setProfile] = useState(null);
   useEffect(() => {
     if (!accessToken) return;

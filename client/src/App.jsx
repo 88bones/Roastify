@@ -7,13 +7,10 @@ import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import TopArtists from "./components/TopArtists";
 import TopTracks from "./components/TopTracks";
+import { AppProvider } from "./context/AppContext";
 
 function App() {
-  const params = new URLSearchParams(window.location.search);
-  const accessToken = params.get("access_token");
-
   const [isOver, setIsOver] = useState(false);
-  const [topArtists, setTopArtists] = useState([]);
 
   return (
     <Router>
@@ -26,27 +23,10 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={
-            <Dashboard
-              isOver={isOver}
-              setIsOver={setIsOver}
-              accessToken={accessToken}
-              topArtists={topArtists}
-              setTopArtists={setTopArtists}
-            />
-          }
+          element={<Dashboard isOver={isOver} setIsOver={setIsOver} />}
         >
-          <Route
-            index
-            element={
-              <TopArtists
-                accessToken={accessToken}
-                topArtists={topArtists}
-                setTopArtists={setTopArtists}
-              />
-            }
-          />
-          <Route element={<TopTracks />} path="top-tracks" />
+          <Route index element={<TopArtists />} />
+          <Route path="top-tracks" element={<TopTracks />} />
         </Route>
         <Route path="/about" element={<About isOver={isOver} />} />
       </Routes>
