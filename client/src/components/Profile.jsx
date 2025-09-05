@@ -1,12 +1,12 @@
 import { React, useState, useEffect, useContext } from "react";
 import axios from "axios";
 import BurgerMenu from "./BurgerMenu";
-import { AppContext } from "../context/AppContext";
+import { useSelector } from "react-redux";
 
 const Profile = ({ isOver }) => {
-  const { accessToken } = useContext(AppContext);
-
   const [profile, setProfile] = useState(null);
+  const { accessToken } = useSelector((state) => state.spotify);
+
   useEffect(() => {
     if (!accessToken) return;
 
@@ -16,7 +16,7 @@ const Profile = ({ isOver }) => {
       })
       .then((res) => setProfile(res.data))
       .catch((err) => console.error(err));
-  }, []);
+  }, [accessToken]);
 
   return (
     <div className="flex flex-col justify-center items-center">

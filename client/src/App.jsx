@@ -7,7 +7,6 @@ import About from "./pages/About";
 import NavBar from "./components/NavBar";
 import TopArtists from "./components/TopArtists";
 import TopTracks from "./components/TopTracks";
-import { AppProvider } from "./context/AppContext";
 
 function App() {
   const [isOver, setIsOver] = useState(false);
