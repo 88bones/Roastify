@@ -1,7 +1,8 @@
 import { React, useState, useEffect } from "react";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
-import { setTopTracks } from "../redux/slice";
+import { setTopTrack } from "../redux/slice";
+import TrackRoast from "../components/TrackRoast";
 
 const TopTracks = () => {
   const { accessToken, topTracks } = useSelector((state) => state.spotify);
@@ -17,10 +18,8 @@ const TopTracks = () => {
           headers: { Authorization: `Bearer ${accessToken}` },
         }
       )
-      .then((res) => dispatch(setTopTracks(res.data.items)))
-      .catch((err) => {
-        console.err(err);
-      });
+      .then((res) => dispatch(setTopTrack(res.data.items)))
+      .catch((err) => console.error(err));
   }, [accessToken]);
 
   return (
@@ -34,7 +33,7 @@ const TopTracks = () => {
                 <img
                   src={track.album.images?.[0]?.url}
                   alt={track.name}
-                  className="w-12 h-12 rounded-full mr-3"
+                  className="w-12 h-12 rounded mr-3"
                 />
                 <div className="flex flex-col">
                   <span>{track.name}</span>
@@ -47,6 +46,7 @@ const TopTracks = () => {
           </ol>
         </div>
       )}
+      <TrackRoast />
     </>
   );
 };

@@ -4,6 +4,7 @@ import MenuSelector from "../components/MenuSelector";
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setAccessToken } from "../redux/slice";
+import Roaster from "../components/Roaster";
 
 const Dashboard = ({ isOver }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ const Dashboard = ({ isOver }) => {
       <Profile isOver={isOver} />
       <MenuSelector />
       <Outlet />
+
       <p className="px-4 text-gray-500 font-mono text-xs">
         *data based on last six months
       </p>

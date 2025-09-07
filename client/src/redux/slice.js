@@ -6,6 +6,8 @@ const spotifySlice = createSlice({
     accessToken: localStorage.getItem("access_token") || null,
     topArtists: [],
     topTracks: [],
+    artistRoast: "",
+    trackRoast: "",
   },
   reducers: {
     setAccessToken: (state, action) => {
@@ -15,12 +17,23 @@ const spotifySlice = createSlice({
     setTopArtist: (state, action) => {
       state.topArtists = action.payload;
     },
-    setTopTracks: (state, action) => {
+    setTopTrack: (state, action) => {
       state.topTracks = action.payload;
+    },
+    setArtistRoast: (state, action) => {
+      state.artistRoast = action.payload;
+    },
+    setTrackRoast: (state, action) => {
+      state.trackRoast = action.payload;
     },
   },
 });
 
-export const { setAccessToken, setTopArtist, setTopTracks } =
-  spotifySlice.actions;
+export const {
+  setAccessToken,
+  setTopArtist,
+  setTopTrack,
+  setArtistRoast,
+  setTrackRoast,
+} = spotifySlice.actions;
 export default spotifySlice.reducer;
